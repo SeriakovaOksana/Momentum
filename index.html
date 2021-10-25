@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="assets/favicon.ico" rel="shortcut icon" />
+  <link rel="stylesheet" href="css/owfont-regular.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <title>momentum</title>
+</head>
+<body>
+  <header class="header">
+    <div class="player">
+      <div class="player-controls">
+        <div class="prev-play-next">
+          <button class="play-prev player-icon"></button>
+          <button class="play player-icon"></button>
+          <button class="play-next player-icon"></button>
+        </div>
+        <div class="audio-name">
+          <span class="audio-name-text">Aqua Caelestis</span>
+        </div>
+        <div class="progress-wrapper">
+          <div class="audio-time">
+            <span class="current">0:00</span>
+            <span class="slash"> / </span>
+            <span class="length">0:00</span>
+          </div>
+          <input type="range" class="timeline player-range" value="0" min="0" max="100"></input>
+        </div>
+        <div class="volume-wrapper">
+          <button class="volume-button player-icon"></button>
+          <input type="range" name="volume" class="volume-slider player-range" min="0" max="1" step="0.05" value="1">
+        </div>
+      </div>
+      <ul class="play-list"></ul>
+    </div>
+    <div class="header-center">
+      <div class="translate">
+        <button class="ru-btn translate-btn">ru</button>
+        <button class="en-btn translate-btn">en</button>
+      </div>
+      <div class="links-wrapper">
+        <div class="links-title">
+          <span>Links</span>
+        </div>
+        <div class="links-board-wrapper">
+          <div class="links-board">
+            <div class="links-item">
+              <a href="https://www.google.com" class="link" target="_blank">
+                <img src="assets/svg/google.svg" alt="icon: link-icon" class="link-icon">
+                <span class="link-name">Google</span>
+              </a>
+              <img src="assets/svg/delete-link.svg" alt="icon: link-icon" class="link-icon delete-icon">
+            </div>
+            <div class="links-item">
+              <a href="https://www.youtube.com" class="link" target="_blank">
+                <img src="assets/svg/youtube.svg" alt="icon: link-icon" class="link-icon">
+                <span class="link-name">YouTube</span>
+              </a>
+              <img src="assets/svg/delete-link.svg" alt="icon: link-icon" class="link-icon delete-icon">
+            </div>
+            <div class="links-item add-button-wrapper">
+              <button class="add-link">Add New Link</button>
+            </div>
+          </div>
+          <div class="new-link-board">
+            <button class="back">
+              <img src="assets/svg/arrow-left.svg" alt="icon: back icon" class="back-icon">
+            </button>
+            <label class="label"> 
+              <span>Name</span>
+              <input class="link-input link-name-input" type="text" placeholder="link name">
+            </label>
+            <label class="label">
+              <span>Link</span>
+              <input class="link-input link-url-input" type="text" required placeholder="https://example.com">
+            </label>
+            <button class="create-new">Create</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="weather">
+      <input type="text" class="city" />
+      <i class="weather-icon owf"></i>
+      <div class="weather-error"></div>
+      <div class="description-container">
+        <span class="temperature"></span>
+        <span class="weather-description"></span>
+      </div>
+      <div class="wind"></div>
+      <div class="humidity"></div>
+    </div>
+  </header>
+  <main class="main">
+    <div class="slider-icons">
+      <button class="slide-prev slider-icon"></button>
+      <button class="slide-next slider-icon"></button>
+    </div>
+    <time class="time"></time>
+    <date class="date"></date>
+    <div class="greeting-container">
+      <span class="greeting"></span>
+      <input type="text" class="name" placeholder="[Enter name]" />
+    </div>
+  </main>
+  <footer class="footer">
+    <button class="change-quote"></button>
+    <div>
+      <div class="quote"></div>
+      <div class="author"></div>
+    </div>
+    <div class="student-info">
+      <span class="year">&copy; 2021</span>
+      <a href="https://rs.school/js/" class="school-logo">
+        <img src="assets/svg/rs_school_js.svg" alt="icon: logo-icon" class="school-logo-icon">
+      </a>
+      <a href="https://github.com/SeriakovaOksana" class="student-github">
+        <img src="assets/svg/github.svg" alt="icon: student github" class="student-github-icon">
+      </a>
+    </div>
+  </footer>
+  <script src="js/script.js"></script>
+</body>
+</html>
