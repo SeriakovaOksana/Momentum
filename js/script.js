@@ -266,11 +266,17 @@ playList.forEach(el => {
 
 // эту переменную обязательно оставляем на месте, т.к. мы только сейчас создали элементы плейлиста
 const playItems = document.querySelectorAll('.play-item');
-
+let currTime;
 function playAudio() { // играть / стоп
     if (!isPlay) {
         audio.src = playList[playNum].src;
-        audio.currentTime = 0;
+
+        if (currTime) {
+            audio.currentTime = currTime;
+        } else {
+            audio.currentTime = 0; 
+        }
+       
         audio.play();
         
         audioName.textContent = playList[playNum].title;
@@ -278,6 +284,8 @@ function playAudio() { // играть / стоп
         isPlay = true;
     } else {
         audio.pause();
+        currTime = audio.currentTime;
+
         isPlay = false;
     }
 
@@ -285,6 +293,8 @@ function playAudio() { // играть / стоп
     let currentAudio = document.querySelector(`[data-src="${playList[playNum].src}"]`);
     playItems.forEach(item => item.classList.remove('item-active'));
     currentAudio.classList.add('item-active');
+
+    setTimeout(handleRangeUpdate, 20);
 }
 
 function toggleAudioIcon() { // меняем иконку 
@@ -298,6 +308,7 @@ function toggleAudioIcon() { // меняем иконку
 // предыдущий / следующий трек
 function prevAudio() {
     isPlay = false;
+    currTime = 0;
 
     if (playNum > 0) {
         playNum--;
@@ -311,6 +322,7 @@ function prevAudio() {
 
 function nextAudio() {
     isPlay = false;
+    currTime = 0;
 
     if (playNum < playList.length - 1) {
         playNum++;
@@ -495,3 +507,7 @@ linkNameInput.addEventListener('input', function() {
 linkUrlInput.addEventListener('input', function() {
     hideError(linkUrlInput);
 });
+
+// setInterval(() => {
+//     console.log(audio.volume)
+// }, 1000)
